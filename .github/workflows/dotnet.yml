@@ -15,6 +15,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
     - name: Setup .NET
       uses: actions/setup-dotnet@v4
       with:
@@ -45,7 +46,7 @@ jobs:
       with:
         java-version: 17
         distribution: 'temurin'  # Distribución recomendada para Linux
-
+        
     - uses: actions/checkout@v4
       with:
         fetch-depth: 0  # Necesario para análisis preciso
