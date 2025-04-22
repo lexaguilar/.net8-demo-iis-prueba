@@ -24,8 +24,12 @@ public static class ServiceExtensions
     
     public static void ConfigureDbContext(this IServiceCollection services, IConfiguration configuration)
     {
+        var connectionString = Environment.GetEnvironmentVariable("DefaultConnection");
+        if (string.IsNullOrEmpty(connectionString))        
+            connectionString = configuration.GetConnectionString("DefaultConnection");
+        
         services.AddDbContext<AppDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            options.UseSqlServer(connectionString));
     }
     
     public static void ConfigureSwagger(this IServiceCollection services)
