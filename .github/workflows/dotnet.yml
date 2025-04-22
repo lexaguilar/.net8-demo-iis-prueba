@@ -23,6 +23,7 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore
     
+    # Escaneo de Vulnerabilidades en Paquetes NuGet
     - name: Scan for vulnerable packages
       run: dotnet list package --vulnerable
 
@@ -33,7 +34,7 @@ jobs:
       run: dotnet test --no-build --verbosity normal
 
     - name: Format check
-      run: dotnet format --verify-no-changes
+      run: dotnet format TaskManagerAPI.csproj --verify-no-changes
 
     - name: Scan for secrets
       uses: gitleaks/gitleaks-action@v2
