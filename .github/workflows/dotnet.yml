@@ -83,3 +83,21 @@ jobs:
       with:
           name: published-app
           path: ./publish
+          
+  deploy-to-iis:
+    needs: build
+    runs-on: self-hosted
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: published-app
+          path: ./publish
+
+      # Aquí puedes elegir tu método de publicación al IIS
+      - name: Deploy to IIS (using PowerShell copy)
+        run: |
+          $source = "$(pwd)\publish"
+          $destination = "C:\app"
+          Copy-Item -Path $source\* -Destination $destination -Recurse -Force
+        shell: pwsh
