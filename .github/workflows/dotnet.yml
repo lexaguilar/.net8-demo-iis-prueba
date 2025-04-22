@@ -100,4 +100,4 @@ jobs:
           $source = "$(pwd)\publish"
           $destination = "C:\app"
           Copy-Item -Path $source\* -Destination $destination -Recurse -Force
-        shell: pwsh
+        shell: powershell
