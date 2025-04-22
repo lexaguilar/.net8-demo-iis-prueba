@@ -94,10 +94,22 @@ jobs:
           name: published-app
           path: ./publish
 
+      - name: Stop IIS site
+        run: |
+          Import-Module WebAdministration
+          Stop-WebAppPool -Name "NombreDelAppPool"
+        shell: powershell
+
       # Aquí puedes elegir tu método de publicación al IIS
       - name: Deploy to IIS (using PowerShell copy)
         run: |
           $source = "$(pwd)\publish"
           $destination = "C:\app"
           Copy-Item -Path $source\* -Destination $destination -Recurse -Force
+        shell: powershell
+        
+      - name: Start IIS site
+        run: |
+          Import-Module WebAdministration
+          Start-WebAppPool -Name "NombreDelAppPool"
         shell: powershell
