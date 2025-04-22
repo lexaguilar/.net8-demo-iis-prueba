@@ -68,3 +68,11 @@
 2025-04-21 20:57:09.5851 Info Shutdown() called. Logger closing...
 2025-04-21 20:57:09.5946 Info Closing old configuration.
 2025-04-21 20:57:09.6222 Info Logger has been closed down.
+2025-04-22 16:04:23.6824 Info Registered target NLog.Targets.FileTarget(Name=file)
+2025-04-22 16:04:23.7032 Info Registered target NLog.Targets.ConsoleTarget(Name=console)
+2025-04-22 16:04:23.7125 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.4.0.3182. Product version: 5.4.0+4d45d445601312040107cbe2ac00e56c4bf4a60b. GlobalAssemblyCache: False
+2025-04-22 16:04:23.7313 Info Validating config: TargetNames=file, console, ConfigItems=35, FilePath=C:\Proyects\curso\App\.net8-demo-iis-prueba\bin\Debug\net8.0\nlog.config
+2025-04-22 16:04:23.7472 Info Configuration initialized.
+2025-04-22 16:05:07.7763 Info Shutdown() called. Logger closing...
+2025-04-22 16:05:07.7763 Info Closing old configuration.
+2025-04-22 16:05:07.8201 Info Logger has been closed down.

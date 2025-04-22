@@ -77,7 +77,7 @@ jobs:
         dotnet sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN }}"
 
     - name: Publish Artifacts
-      run: dotnet publish -c Release -o ./publish
+      run: dotnet publish -c Release -o ./publish -p:Version=1.0.0.${{ github.run_number }} -p:AssemblyVersion=1.0.0.${{ github.run_number }} -p:FileVersion=1.0.0.${{ github.run_number }} -p:InformationalVersion=1.0.0.${{ github.run_number }}
 
     - name: Upload artifacts
       uses: actions/upload-artifact@v4
