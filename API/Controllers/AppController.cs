@@ -9,7 +9,6 @@ namespace TaskManagerAPI.API.Controllers;
 public class AppController : ControllerBase
 {
     private Version version = Assembly.GetExecutingAssembly().GetName().Version;
-
     
     [HttpGet("get")]
     public IActionResult get()
