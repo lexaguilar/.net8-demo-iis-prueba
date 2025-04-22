@@ -97,7 +97,7 @@ jobs:
       - name: Stop IIS site
         run: |
           Import-Module WebAdministration
-          Stop-WebAppPool -Name "NombreDelAppPool"
+          Stop-WebAppPool -Name "net8"
         shell: powershell
 
       # Aquí puedes elegir tu método de publicación al IIS
@@ -111,5 +111,5 @@ jobs:
       - name: Start IIS site
         run: |
           Import-Module WebAdministration
-          Start-WebAppPool -Name "NombreDelAppPool"
+          Start-WebAppPool -Name "net8"
         shell: powershell
