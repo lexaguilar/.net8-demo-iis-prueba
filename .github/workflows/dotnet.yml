@@ -22,7 +22,8 @@ jobs:
     - name: Publish SNS Topic
       uses: nothingalike/sns-publish-topic@v1.6
       with:
-        MESSAGE: "message"
+        MESSAGE: "Despliegue exitoso para $GITHUB_REPOSITORY"
+        SUBJECT: "message"
         TOPIC_ARN: "arn:aws:sns:us-east-1:462415074685:publicaciones-app"
       env:
         AWS_REGION: "us-east-1"
