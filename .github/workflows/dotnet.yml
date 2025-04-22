@@ -22,7 +22,20 @@ jobs:
         dotnet-version: 8.0.x
     - name: Restore dependencies
       run: dotnet restore
+    
+    - name: Scan for vulnerable packages
+      run: dotnet list package --vulnerable
+
     - name: Build
       run: dotnet build --no-restore
+
     - name: Test
       run: dotnet test --no-build --verbosity normal
+
+    - name: Format check
+      run: dotnet format --verify-no-changes
+
+    - name: Scan for secrets
+      uses: gitleaks/gitleaks-action@v2
+      with:
+        args: "--verbose --redact"
