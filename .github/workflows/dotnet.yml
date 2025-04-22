@@ -99,7 +99,7 @@ jobs:
       - name: Stop IIS site
         run: |
           Import-Module WebAdministration
-          Stop-WebAppPool -Name "net8"
+          Stop-WebAppPool -Name "DefaultAppPool"
           Write-Output "Esperando 5 segundos para liberar recursos..."
           Start-Sleep -Seconds 5          
         shell: powershell
@@ -115,7 +115,7 @@ jobs:
       - name: Start IIS site
         run: |
           Import-Module WebAdministration
-          Start-WebAppPool -Name "net8"
+          Start-WebAppPool -Name "DefaultAppPool"
         shell: powershell
 
       - name: Publish SNS Topic
