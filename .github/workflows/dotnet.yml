@@ -98,6 +98,8 @@ jobs:
         run: |
           Import-Module WebAdministration
           Stop-WebAppPool -Name "net8"
+          Write-Output "Esperando 5 segundos para liberar recursos..."
+          Start-Sleep -Seconds 5          
         shell: powershell
 
       # Aquí puedes elegir tu método de publicación al IIS
