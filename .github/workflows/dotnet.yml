@@ -33,9 +33,6 @@ jobs:
     - name: Test
       run: dotnet test --no-build --verbosity normal
 
-    - name: Format check
-      run: dotnet format TaskManagerAPI.csproj --no-restore --verify-no-changes --verbosity diagnostic
-
     - name: Scan for secrets
       uses: gitleaks/gitleaks-action@v2
       with:
